@@ -6,8 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meu Portfólio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/img/Design sem nome.png" type="image/x-icon" />
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+        }
         #contato {
             background: #111;
             color: white;
@@ -56,6 +64,62 @@
             text-align: center;
             margin-top: 15px;
             font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .custom-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-header::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(220, 53, 69, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .fade-transition {
+            opacity: 1;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+
+        .btn-danger {
+            border-radius: 30px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #bb2d3b;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
         }
     </style>
 </head>
@@ -82,28 +146,42 @@
     </nav>
 
     <!-- Cabeçalho -->
-    <header class="bg-dark text-white text-center py-5">
+    <header class="custom-header text-white text-center py-5">
         <div class="container">
-            <h1>Minha galeria de projetos</h1>
-            <p>Explore meus projetos mais recentes</p>
+            <h1 class="fw-bold">Minha galeria de projetos</h1>
+            <p class="lead">Explore meus projetos mais recentes</p>
         </div>
     </header>
 
     <!-- Navegação entre tipos -->
-    <div class="container mt-4">
-        <ul class="nav nav-tabs justify-content-center" id="menuTabs">
+    <div class="container mt-5">
+        <style>
+            .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+                background-color: #dc3545;
+                color: white !important;
+            }
+            .nav-pills .nav-link {
+                color: #212529;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            .nav-pills .nav-link:hover {
+                background-color: #f8f9fa;
+            }
+        </style>
+        <ul class="nav nav-pills justify-content-center gap-3" id="menuTabs">
             <li class="nav-item">
-                <button class="nav-link active" id="btnPortfolio"
+                <button class="nav-link active rounded-pill px-4" id="btnPortfolio"
                     onclick="trocarConteudo('portfolio')">Portfólios</button>
             </li>
             <li class="nav-item">
-                <button class="nav-link" id="btnLinks" onclick="trocarConteudo('links')">Páginas de Links</button>
+                <button class="nav-link rounded-pill px-4 text-dark" id="btnLinks" onclick="trocarConteudo('links')">Páginas de Links</button>
             </li>
         </ul>
     </div>
 
     <!-- Conteúdo Dinâmico -->
-    <section class="container my-5">
+    <section class="container my-5 fade-transition" id="contentSection">
         <!-- Portfólios -->
         <div class="row" id="portfolioContent">
             <div class="col-md-4 mb-4">
@@ -218,11 +296,23 @@
     <!-- Contato -->
     <section id="contato" class="text-center">
         <div class="container">
-            <h2 class="fw-bold text-danger">Entre em Contato</h2>
-            <p class="lead">Ficarei feliz em ouvir você! Me envie um e-mail ou entre em contato pelo whatsapp.</p>
-            <div class="mt-4">
-                <p>Email: <a href="mailto:tomazsuporte2023@gmail.com">tomazsuporte2023@gmail.com</a></p>
-                <p>Telefone: <a href="tel:+5517991397088">(17) 99139-7088</a></p>
+            <h2 class="fw-bold text-danger mb-3">Entre em Contato</h2>
+            <p class="lead mb-5">Ficarei feliz em ouvir você! Me envie um e-mail ou entre em contato pelo whatsapp.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-envelope-fill fs-2 text-danger mb-2"></i>
+                        <p class="mb-0 fs-5">Email:</p>
+                        <a href="mailto:tomazsuporte2023@gmail.com" class="fs-6">tomazsuporte2023@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <i class="bi bi-whatsapp fs-2 text-danger mb-2"></i>
+                        <p class="mb-0 fs-5">Telefone / WhatsApp:</p>
+                        <a href="tel:+5517991397088" class="fs-6">(17) 99269-3155</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -239,18 +329,27 @@
             const links = document.getElementById('linksContent');
             const btnPortfolio = document.getElementById('btnPortfolio');
             const btnLinks = document.getElementById('btnLinks');
+            const contentSection = document.getElementById('contentSection');
 
-            if (tipo === 'portfolio') {
-                portfolio.classList.remove('d-none');
-                links.classList.add('d-none');
-                btnPortfolio.classList.add('active');
-                btnLinks.classList.remove('active');
-            } else {
-                portfolio.classList.add('d-none');
-                links.classList.remove('d-none');
-                btnPortfolio.classList.remove('active');
-                btnLinks.classList.add('active');
-            }
+            // Fade out
+            contentSection.classList.add('fade-out');
+
+            setTimeout(() => {
+                if (tipo === 'portfolio') {
+                    portfolio.classList.remove('d-none');
+                    links.classList.add('d-none');
+                    btnPortfolio.classList.add('active');
+                    btnLinks.classList.remove('active');
+                } else {
+                    portfolio.classList.add('d-none');
+                    links.classList.remove('d-none');
+                    btnPortfolio.classList.remove('active');
+                    btnLinks.classList.add('active');
+                }
+
+                // Fade in
+                contentSection.classList.remove('fade-out');
+            }, 300); // Wait for the transition duration before swapping content
         }
     </script>
 
