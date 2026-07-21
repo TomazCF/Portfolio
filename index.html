@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -57,6 +57,60 @@
             margin-top: 15px;
             font-size: 1.1rem;
         }
+
+        /* Habilidades */
+        #habilidades {
+            background-color: #1a1a24;
+            padding: 60px 0;
+            color: white;
+        }
+
+        #habilidades h2 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #21212c;
+            width: 130px;
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px 0 20px 0; /* Mimics the specific corner styling */
+            border-bottom: 3px solid #8b5cf6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+        }
+
+        .skill-name {
+            color: #8b5cf6;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -74,6 +128,9 @@
                         <a class="nav-link active" href="#">Início</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contato">Contato</a>
                     </li>
                 </ul>
@@ -88,6 +145,87 @@
             <p>Explore meus projetos mais recentes</p>
         </div>
     </header>
+
+    <!-- Habilidades -->
+    <section id="habilidades">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-name">HTML5</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/html5/8b5cf6" alt="HTML5" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">CSS3</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/css/8b5cf6" alt="CSS3" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">JavaScript</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/javascript/8b5cf6" alt="JavaScript" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">TypeScript</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/typescript/8b5cf6" alt="TypeScript" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">React.js</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/react/8b5cf6" alt="React.js" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Next.js</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/nextdotjs/8b5cf6" alt="Next.js" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">CSS-in-JS</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/styledcomponents/8b5cf6" alt="CSS-in-JS" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Material UI</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/mui/8b5cf6" alt="Material UI" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Tailwind CSS</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/tailwindcss/8b5cf6" alt="Tailwind CSS" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">GraphQL</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/graphql/8b5cf6" alt="GraphQL" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Apollo</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/apollographql/8b5cf6" alt="Apollo" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Redux</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/redux/8b5cf6" alt="Redux" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">React Query</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/reactquery/8b5cf6" alt="React Query" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">React Testing</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/testinglibrary/8b5cf6" alt="React Testing" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Strapi</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/strapi/8b5cf6" alt="Strapi" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Storybook</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/storybook/8b5cf6" alt="Storybook" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">SASS</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/sass/8b5cf6" alt="SASS" />
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Figma</div>
+                    <img class="skill-icon" src="https://cdn.simpleicons.org/figma/8b5cf6" alt="Figma" />
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Navegação entre tipos -->
     <div class="container mt-4">
