@@ -9,19 +9,58 @@
     <link rel="icon" href="/img/Design sem nome.png" type="image/x-icon" />
     <style>
         #contato {
-            background: #111;
+            background: #111116;
             color: white;
             padding: 50px 0;
         }
 
         #contato a {
-            color: #dc3545;
+            color: #8b5cf6;
             font-weight: bold;
             text-decoration: none;
         }
 
         #contato a:hover {
             text-decoration: underline;
+            color: #7c3aed;
+        }
+
+        /* Custom Tabs Styling */
+        .nav-tabs .nav-link {
+            color: #a0a0b0;
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            color: white;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: transparent;
+            color: #8b5cf6;
+            border: none;
+            border-bottom: 2px solid #8b5cf6;
+        }
+
+        /* Custom Card Styling */
+        .card {
+            background-color: #21212c !important;
+            border: none !important;
+            border-radius: 12px !important;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+        }
+
+        .card-body {
+            color: white;
         }
 
         .card-img-wrapper img {
@@ -37,7 +76,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f8f9fa;
+            background-color: #1a1a24;
             padding: 5px;
         }
 
@@ -102,43 +141,6 @@
         }
 
         /* Botões customizados */
-        .btn-primary-purple {
-            background-color: #8b5cf6;
-            color: white;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary-purple:hover {
-            background-color: #7c3aed;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.5);
-        }
-
-        .btn-outline-purple {
-            background-color: transparent;
-            color: white;
-            border: 1px solid #8b5cf6;
-            padding: 10px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-left: 15px;
-        }
-
-        .btn-outline-purple:hover {
-            background-color: rgba(139, 92, 246, 0.1);
-            color: white;
-            transform: translateY(-2px);
-        }
 
         /* Sobre mim */
         .about-section {
@@ -215,6 +217,36 @@
             height: 40px;
             object-fit: contain;
         }
+
+        :root {
+            --bs-primary: #8b5cf6;
+            --bs-primary-rgb: 139, 92, 246;
+        }
+
+        .btn-primary {
+            background-color: var(--bs-primary) !important;
+            border-color: var(--bs-primary) !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #7c3aed !important;
+            border-color: #7c3aed !important;
+        }
+
+        .btn-outline-primary {
+            color: var(--bs-primary) !important;
+            border-color: var(--bs-primary) !important;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--bs-primary) !important;
+            color: white !important;
+        }
+
+        .text-primary {
+            color: var(--bs-primary) !important;
+        }
+
     </style>
 </head>
 
@@ -251,8 +283,8 @@
                     <div class="hero-name">Tomaz Cezar :)</div>
                     <p class="hero-subtitle">Desenvolvedor Front-End | Next.js | React.js | Node.js</p>
                     <div class="mt-4">
-                        <a href="#" class="btn-primary-purple">Download CV</a>
-                        <a href="#contato" class="btn-outline-purple">Entrar em contato</a>
+                        <a href="#" class="btn-primary">Download CV</a>
+                        <a href="#contato" class="btn-outline-primary">Entrar em contato</a>
                     </div>
                 </div>
                 <div class="col-md-5 profile-image-container">
@@ -377,7 +409,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Dra. Angélica Cucolo | Psiquiatra</h5>
-                        <a href="draAngelica/index.html" class="btn btn-danger d-block mt-2">Ver Projeto</a>
+                        <a href="draAngelica/index.html" class="btn btn-primary d-block mt-2">Ver Projeto</a>
                     </div>
                 </div>
             </div>
@@ -389,7 +421,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Clínica Polimental</h5>
-                        <a href="https://polimental.com.br/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
+                        <a href="https://polimental.com.br/" class="btn btn-primary d-block mt-2">Ver Projeto</a>
                     </div>
                 </div>
             </div>
@@ -401,7 +433,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Marques Gonçalves | Advocacia</h5>
-                        <a href="https://fgadvogadobrasil.com.br/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
+                        <a href="https://fgadvogadobrasil.com.br/" class="btn btn-primary d-block mt-2">Ver Projeto</a>
                     </div>
                 </div>
             </div>
@@ -413,7 +445,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Lava Jato Carlinhos</h5>
-                        <a href="https://lavajatocarlinhos.com/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
+                        <a href="https://lavajatocarlinhos.com/" class="btn btn-primary d-block mt-2">Ver Projeto</a>
                     </div>
                 </div>
             </div>
@@ -425,7 +457,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Dj Yuri Eventos</h5>
-                        <a href="https://djyurieventos.com/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
+                        <a href="https://djyurieventos.com/" class="btn btn-primary d-block mt-2">Ver Projeto</a>
                     </div>
                 </div>
             </div>
@@ -482,7 +514,7 @@
     <!-- Contato -->
     <section id="contato" class="text-center">
         <div class="container">
-            <h2 class="fw-bold text-danger">Entre em Contato</h2>
+            <h2 class="fw-bold text-primary">Entre em Contato</h2>
             <p class="lead">Ficarei feliz em ouvir você! Me envie um e-mail ou entre em contato pelo whatsapp.</p>
             <div class="mt-4">
                 <p>Email: <a href="mailto:tomazsuporte2023@gmail.com">tomazsuporte2023@gmail.com</a></p>
