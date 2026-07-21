@@ -58,6 +58,110 @@
             font-size: 1.1rem;
         }
 
+        /* Hero Section */
+        .hero-section {
+            background-color: #111116; /* Dark background to match the reference */
+            padding: 80px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-name {
+            color: #8b5cf6; /* Purple */
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            color: #a0a0b0;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #8b5cf6;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Botões customizados */
+        .btn-primary-purple {
+            background-color: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-purple:hover {
+            background-color: #7c3aed;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-outline-purple {
+            background-color: transparent;
+            color: white;
+            border: 1px solid #8b5cf6;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .btn-outline-purple:hover {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sobre mim */
+        .about-section {
+            background-color: #15151c;
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #ffffff;
+        }
+
+        .about-description {
+            color: #a0a0b0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         /* Habilidades */
         #habilidades {
             background-color: #1a1a24;
@@ -138,13 +242,35 @@
         </div>
     </nav>
 
-    <!-- Cabeçalho -->
-    <header class="bg-dark text-white text-center py-5">
+    <!-- Cabeçalho / Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <h1>Minha galeria de projetos</h1>
-            <p>Explore meus projetos mais recentes</p>
+            <div class="row align-items-center">
+                <div class="col-md-7 text-center text-md-start mb-5 mb-md-0">
+                    <h1 class="hero-title">Olá, eu sou o</h1>
+                    <div class="hero-name">Tomaz Cezar :)</div>
+                    <p class="hero-subtitle">Desenvolvedor Front-End | Next.js | React.js | Node.js</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn-primary-purple">Download CV</a>
+                        <a href="#contato" class="btn-outline-purple">Entrar em contato</a>
+                    </div>
+                </div>
+                <div class="col-md-5 profile-image-container">
+                    <img src="https://via.placeholder.com/300x300.png?text=Profile+Pic" alt="Tomaz Cezar" class="profile-image">
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
+
+    <!-- Sobre mim -->
+    <section class="about-section" id="sobre-mim">
+        <div class="container">
+            <h2>Sobre mim</h2>
+            <p class="about-description">
+                Desenvolvedor Front-end especializado em criar experiências digitais rápidas, escaláveis e com foco em performance. Tenho sólida experiência em grandes projetos, utilizando tecnologias modernas como React.js, Next.js, TypeScript, Redux, Styled Components, Material UI e Tailwind CSS. Sou apaixonado pelo desenvolvimento de componentes reutilizáveis, Design Systems, animações fluidas e por evoluir continuamente a performance e a acessibilidade das aplicações.
+            </p>
+        </div>
+    </section>
 
     <!-- Habilidades -->
     <section id="habilidades">
