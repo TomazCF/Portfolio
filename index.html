@@ -4,211 +4,542 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portfólio</title>
+    <title>Tomaz Cezar | Web Designer & Desenvolvedor Web</title>
+    
+    <!-- Meta Tags para SEO -->
+    <meta name="description" content="Portfólio profissional de Tomaz Cezar - Web Designer e Desenvolvedor Web especializado em sites institucionais e landing pages de alta conversão." />
+    <meta name="keywords" content="Web Designer, Desenvolvedor Web, Criação de Sites, Landing Page, Tomaz Cezar, Portfólio" />
+    <meta name="author" content="Tomaz Cezar" />
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tomaz Cezar | Web Designer & Desenvolvedor Web" />
+    <meta property="og:description" content="Explore meus projetos mais recentes de sites institucionais e landing pages sob medida." />
+    <meta property="og:image" content="img/exem_angelica.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/Design sem nome.png" type="image/x-icon" />
+
+    <!-- Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 & Font Awesome 6 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="icon" href="/img/Design sem nome.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <style>
-        #contato {
-            background: #111;
-            color: white;
-            padding: 50px 0;
+        :root {
+            --bg-dark: #0b0714;
+            --bg-card: #140d24;
+            --bg-card-hover: #1c1333;
+            --accent: #a855f7;
+            --accent-gradient: linear-gradient(135deg, #a855f7 0%, #d946ef 100%);
+            --accent-glow: rgba(168, 85, 247, 0.4);
+            --text-main: #f5f3ff;
+            --text-muted: #a78bfa;
+            --border-color: rgba(168, 85, 247, 0.18);
+            --glass-bg: rgba(20, 13, 36, 0.85);
         }
 
-        #contato a {
-            color: #dc3545;
-            font-weight: bold;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* Navbar Customizada */
+        .navbar-custom {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.5px;
+            color: #ffffff !important;
+        }
+
+        .navbar-brand span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 100px 0 70px 0;
+            position: relative;
+            background: radial-gradient(circle at 50% 20%, rgba(168, 85, 247, 0.18) 0%, rgba(11, 7, 20, 0) 70%);
+        }
+
+        .badge-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(168, 85, 247, 0.12);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+            font-weight: 600;
+            font-size: 0.88rem;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        .hero-title .gradient-text {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 32px auto;
+            line-height: 1.6;
+        }
+
+        /* Botões Personalizados */
+        .btn-accent {
+            background: var(--accent-gradient);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 8px 24px var(--accent-glow);
+            transition: all 0.3s ease;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        #contato a:hover {
-            text-decoration: underline;
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(217, 70, 239, 0.55);
+            color: #ffffff;
         }
 
-        .card-img-wrapper img {
-            transition: transform 0.3s ease;
+        .btn-outline-custom {
+            background: transparent;
+            color: var(--text-main);
+            font-weight: 600;
+            padding: 12px 26px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .card-img-wrapper:hover img {
-            transform: scale(1.1);
+        .btn-outline-custom:hover {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: rgba(168, 85, 247, 0.4);
+            color: #ffffff;
         }
 
-        /* Padrão para portfólio */
+        /* Título das Seções */
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        /* Cards de Projetos */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), 0 0 24px rgba(168, 85, 247, 0.25);
+        }
+
         .card-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background-color: #1a112e;
+            padding: 12px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f8f9fa;
-            padding: 5px;
-        }
-
-        /* Apenas para páginas de links */
-        .card-img-wrapper.links {
-            height: 480px;
+            height: 220px;
         }
 
         .card-img-top {
             max-height: 100%;
             max-width: 100%;
             object-fit: contain;
+            transition: transform 0.4s ease;
+            border-radius: 8px;
         }
 
-        .card-title {
+        .project-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .badge-category {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(11, 7, 20, 0.88);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            color: #c084fc;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 14px;
+        }
+
+        .tech-tag {
+            background: rgba(168, 85, 247, 0.08);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(168, 85, 247, 0.15);
+        }
+
+        .btn-card {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
             text-align: center;
-            margin-top: 15px;
-            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .project-card:hover .btn-card {
+            background: var(--accent-gradient);
+            border-color: transparent;
+            box-shadow: 0 4px 14px var(--accent-glow);
+        }
+
+        /* Seção de Contato */
+        .contact-section {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #110920 100%);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .contact-item:hover {
+            background: rgba(168, 85, 247, 0.12);
+            border-color: rgba(168, 85, 247, 0.4);
+            color: #ffffff;
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #ffffff;
+            flex-shrink: 0;
+        }
+
+        /* Widget Flutuante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: #ffffff;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Rodapé */
+        footer {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            padding: 24px 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 
 <body>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5517991397088?text=Ol%C3%A1%20Tomaz!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+       class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- Navegação -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
         <div class="container">
+            <a class="navbar-brand" href="#">Tomaz <span>Cezar</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Início</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="https://wa.me/5517991397088?text=Ol%C3%A1%20Tomaz!%20Gostaria%20de%20um%20or%C3%A7amento." 
+                           target="_blank" class="btn-accent py-2 px-3 fs-6">
+                            <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Cabeçalho -->
-    <header class="bg-dark text-white text-center py-5">
+    <!-- Cabeçalho / Hero Section -->
+    <header class="hero-section text-center">
         <div class="container">
-            <h1>Minha galeria de projetos</h1>
-            <p>Explore meus projetos mais recentes</p>
+            <div class="badge-hero">
+                <i class="fa-solid fa-sparkles"></i> Web Designer &amp; Desenvolvedor Web
+            </div>
+            <h1 class="hero-title">
+                Transformando ideias em <br />
+                <span class="gradient-text">experiências digitais incríveis</span>
+            </h1>
+            <p class="hero-subtitle">
+                Desenvolvimento de sites profissionais e landing pages de alta conversão personalizadas para posicionar sua marca no topo.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#projetos" class="btn-accent">
+                    <i class="fa-solid fa-grid-2"></i> Ver Meus Projetos
+                </a>
+                <a href="https://wa.me/5517991397088?text=Ol%C3%A1%20Tomaz!%20Gostaria%20de%20falar%20sobre%20um%20projeto." 
+                   target="_blank" class="btn-outline-custom">
+                    <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Navegação entre tipos -->
-    <div class="container mt-4">
-        <ul class="nav nav-tabs justify-content-center" id="menuTabs">
-            <li class="nav-item">
-                <button class="nav-link active" id="btnPortfolio"
-                    onclick="trocarConteudo('portfolio')">Portfólios</button>
-            </li>
-            <li class="nav-item">
-                <button class="nav-link" id="btnLinks" onclick="trocarConteudo('links')">Páginas de Links</button>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Conteúdo Dinâmico -->
-    <section class="container my-5">
-        <!-- Portfólios -->
-        <div class="row" id="portfolioContent">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="img/exem_angelica.png" class="card-img-top" alt="Projeto 1">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dra. Angélica Cucolo | Psiquiatra</h5>
-                        <a href="draAngelica/index.html" class="btn btn-danger d-block mt-2">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="img/polimental.png" class="card-img-top" alt="Projeto 2">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Clínica Polimental</h5>
-                        <a href="https://polimental.com.br/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="img/advocacia.png" class="card-img-top" alt="Projeto 3">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Marques Gonçalves | Advocacia</h5>
-                        <a href="https://fgadvogadobrasil.com.br/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="img/ljcarlinhos.png" class="card-img-top" alt="Projeto 4">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Lava Jato Carlinhos</h5>
-                        <a href="https://lavajatocarlinhos.com/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="img/DJ Yuri.png" class="card-img-top" alt="Projeto 4">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dj Yuri Eventos</h5>
-                        <a href="https://djyurieventos.com/" class="btn btn-danger d-block mt-2">Ver Projeto</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Conteúdo dos Projetos -->
+    <section class="container-fluid px-lg-5 my-5" id="projetos">
+        <div class="section-header text-center">
+            <h2 class="section-title">Projetos em <span class="gradient-text" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Destaque</span></h2>
+            <p class="text-muted">Conheça alguns dos trabalhos mais recentes desenvolvidos sob medida</p>
         </div>
 
-        <!-- Páginas de Links -->
-        <div class="row d-none" id="linksContent">
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
+        <!-- 4 Projetos Lado a Lado (1 linha no Desktop) -->
+        <div class="row g-3 g-lg-4">
+            <!-- Projeto 1: Dra Angelica -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="project-card">
                     <div class="card-img-wrapper">
-                        <img src="img/links/pistaledInfinity.jpeg" class="card-img-top" alt="Pista LedInfinity">
+                        <span class="badge-category">Saúde &amp; Medicina</span>
+                        <img src="img/exem_angelica.png" class="card-img-top" alt="Dra. Angélica Cucolo">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Pista LedInfinity</h5>
+                        <div>
+                            <h3 class="project-title">Dra. Angélica Cucolo | Psiquiatra</h3>
+                            <div class="project-tags">
+                                <span class="tech-tag">Landing Page</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">Responsivo</span>
+                            </div>
+                        </div>
+                        <a href="draAngelica/index.html" class="btn-card mt-3">
+                            Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
+            <!-- Projeto 2: Advocacia -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="project-card">
                     <div class="card-img-wrapper">
-                        <img src="img/links/isabella_chamas.jpeg" class="card-img-top" alt="Isabella Chamas">
+                        <span class="badge-category">Jurídico</span>
+                        <img src="img/advocacia.png" class="card-img-top" alt="Marques Gonçalves Advocacia">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Dra. Isabella Chamas</h5>
+                        <div>
+                            <h3 class="project-title">Marques Gonçalves | Advocacia</h3>
+                            <div class="project-tags">
+                                <span class="tech-tag">Institucional</span>
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Conversão</span>
+                            </div>
+                        </div>
+                        <a href="https://fgadvogadobrasil.com.br/" target="_blank" class="btn-card mt-3">
+                            Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
+            <!-- Projeto 3: Clínica Aura (Estética Avançada) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="project-card">
                     <div class="card-img-wrapper">
-                        <img src="img/links/mayra_ricci.jpeg" class="card-img-top" alt="Mayra Ricci">
+                        <span class="badge-category">Estética &amp; Luxo</span>
+                        <img src="img/estetica_aura.png" class="card-img-top" alt="Clínica Aura Estética">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Dra. Mayra Ricci</h5>
+                        <div>
+                            <h3 class="project-title">Clínica Aura | Estética Avançada</h3>
+                            <div class="project-tags">
+                                <span class="tech-tag">Biomedicina</span>
+                                <span class="tech-tag">Luxo</span>
+                                <span class="tech-tag">Agendamento</span>
+                            </div>
+                        </div>
+                        <a href="esteticaAura/index.html" class="btn-card mt-3">
+                            Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card h-100">
+            <!-- Projeto 4: Nexus Tech (Software & IA) -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="project-card">
                     <div class="card-img-wrapper">
-                        <img src="img/links/meu.jpeg" class="card-img-top" alt="Cria Web Design">
+                        <span class="badge-category">Tech &amp; IA</span>
+                        <img src="img/nexus_tech.png" class="card-img-top" alt="Nexus Tech">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Cria Web Design</h5>
+                        <div>
+                            <h3 class="project-title">Nexus Tech | Software &amp; IA</h3>
+                            <div class="project-tags">
+                                <span class="tech-tag">SaaS / Tech</span>
+                                <span class="tech-tag">Cyber UI</span>
+                                <span class="tech-tag">B2B</span>
+                            </div>
+                        </div>
+                        <a href="nexusTech/index.html" class="btn-card mt-3">
+                            Ver Projeto <i class="fa-solid fa-arrow-up-right-from-square ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -216,43 +547,60 @@
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="text-center">
+    <section id="contato" class="contact-section">
         <div class="container">
-            <h2 class="fw-bold text-danger">Entre em Contato</h2>
-            <p class="lead">Ficarei feliz em ouvir você! Me envie um e-mail ou entre em contato pelo whatsapp.</p>
-            <div class="mt-4">
-                <p>Email: <a href="mailto:tomazsuporte2023@gmail.com">tomazsuporte2023@gmail.com</a></p>
-                <p>Telefone: <a href="tel:+5517991397088">(17) 99139-7088</a></p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-card text-center">
+                        <h2 class="fw-bold mb-3">Vamos criar um projeto <span class="gradient-text" style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">incrível juntos?</span></h2>
+                        <p class="text-muted mb-4 fs-5">
+                            Entre em contato para orçamentos, dúvidas ou parcerias. Estou pronto para transformar sua presença digital.
+                        </p>
+                        
+                        <div class="row g-3 text-start mt-2">
+                            <div class="col-md-6">
+                                <a href="mailto:tomazsuporte2023@gmail.com" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted small">E-mail</div>
+                                        <div class="fw-bold text-break">tomazsuporte2023@gmail.com</div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-md-6">
+                                <a href="https://wa.me/5517991397088?text=Ol%C3%A1%20Tomaz!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20falar%20com%20voc%C3%AA." target="_blank" class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-muted small">WhatsApp / Telefone</div>
+                                        <div class="fw-bold">(17) 99139-7088</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-top border-secondary border-opacity-10">
+                            <a href="https://wa.me/5517991397088?text=Ol%C3%A1%20Tomaz!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." 
+                               target="_blank" class="btn-accent px-4 py-3">
+                                <i class="fa-brands fa-whatsapp"></i> Iniciar Conversa no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Tomaz Cezar. Todos os direitos reservados.</p>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Tomaz Cezar. Todos os direitos reservados. | Web Design &amp; Desenvolvimento</p>
+        </div>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        function trocarConteudo(tipo) {
-            const portfolio = document.getElementById('portfolioContent');
-            const links = document.getElementById('linksContent');
-            const btnPortfolio = document.getElementById('btnPortfolio');
-            const btnLinks = document.getElementById('btnLinks');
-
-            if (tipo === 'portfolio') {
-                portfolio.classList.remove('d-none');
-                links.classList.add('d-none');
-                btnPortfolio.classList.add('active');
-                btnLinks.classList.remove('active');
-            } else {
-                portfolio.classList.add('d-none');
-                links.classList.remove('d-none');
-                btnPortfolio.classList.remove('active');
-                btnLinks.classList.add('active');
-            }
-        }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
